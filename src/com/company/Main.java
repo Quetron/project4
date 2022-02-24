@@ -135,7 +135,7 @@ public class Main {
         while(!isValid){
             try{
                 int a = parseInt(priorityOfTask);
-                if(parsedNumber > 5 || parsedNumber < 0){
+                if(a > 5 || a < 0){
                     System.out.println("Enter a number 0-5");
                     priorityOfTask = input.nextLine();
                 }else{
@@ -265,7 +265,8 @@ public class Main {
 
     static void printTasks(){
         for (int i = 0; i < tasksArrayList.size(); i++) {
-            System.out.println("Task title: " + tasksArrayList.get(i).getTaskTitle()
+            System.out.println("Index: " + i
+                    + " | Task title: " + tasksArrayList.get(i).getTaskTitle()
                     + " | Task Description: " + tasksArrayList.get(i).getTaskDescription()
                     + " | Task Priority: " + tasksArrayList.get(i).getTaskPriority());
         }
@@ -294,7 +295,8 @@ public class Main {
         for (int i = 0; i < tasksArrayList.size(); i++) {
             int priorityToMatch = tasksArrayList.get(i).getTaskPriority();
             if (priorityToMatch == parsedNumber){
-                System.out.println("Task title: " + tasksArrayList.get(i).getTaskTitle()
+                System.out.println("Index: " + i
+                        + " | Task title: " + tasksArrayList.get(i).getTaskTitle()
                         + " | Task Description: " + tasksArrayList.get(i).getTaskDescription()
                         + " | Task Priority: " + tasksArrayList.get(i).getTaskPriority());
             }
