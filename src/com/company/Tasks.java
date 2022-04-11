@@ -49,13 +49,15 @@ public class Tasks implements Comparable<Tasks>{
     @Override
     public int compareTo(Tasks compareTask) {
 
-        int compareQuantity = ((Tasks) compareTask).getTaskPriority();
+        int comparePriority = this.taskPriority.compareTo(compareTask.taskPriority);
 
-        //ascending order
-        //return this.taskPriority - compareQuantity;
-
-        //descending order
-        return compareQuantity - this.taskPriority;
-
+        if(comparePriority == -1){
+            return 1;
+        }
+        if(comparePriority == 0){
+            return this.taskTitle.compareTo(compareTask.taskTitle);
+        }else{
+            return comparePriority - this.taskPriority;
+        }
     }
 }
