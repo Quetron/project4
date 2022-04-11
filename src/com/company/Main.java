@@ -16,6 +16,7 @@ public class Main {
     static Scanner input = new Scanner(System.in);
     static List<Tasks> tasksArrayList = new ArrayList<>();
     static int parsedNumber;
+
     static void menuSelection() {
         try{
             System.out.println("      Menu      " +
@@ -264,6 +265,7 @@ public class Main {
     }
 
     static void printTasks(){
+        Collections.sort(tasksArrayList);
         for (int i = 0; i < tasksArrayList.size(); i++) {
             System.out.println("Index: " + i
                     + " | Task title: " + tasksArrayList.get(i).getTaskTitle()

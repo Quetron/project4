@@ -1,6 +1,8 @@
 package com.company;
 
-public class Tasks {
+import java.util.Comparator;
+
+public class Tasks implements Comparable<Tasks>{
     private String taskTitle;
     private String taskDescription;
     private Integer taskPriority;
@@ -42,5 +44,18 @@ public class Tasks {
                 ", taskDescription='" + taskDescription + '\'' +
                 ", taskPriority=" + taskPriority +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Tasks compareTask) {
+
+        int compareQuantity = ((Tasks) compareTask).getTaskPriority();
+
+        //ascending order
+        //return this.taskPriority - compareQuantity;
+
+        //descending order
+        return compareQuantity - this.taskPriority;
+
     }
 }
